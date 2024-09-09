@@ -1,25 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { CssBaseline } from "@mui/material";
+
+import AppAuth0Provider from "containers/AppAuth0Provider";
+import AppQueryProviderContainer from "containers/AppQueryProviderContainer";
+import Main from "features/main";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppAuth0Provider>
+      <AppQueryProviderContainer>
+        <CssBaseline />
+        <Main />
+      </AppQueryProviderContainer>
+    </AppAuth0Provider>
   );
 }
 
